@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.alisabridge">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name="com.alisabridge.AliceBridgeApplication"
+        android:allowBackup="true"
+        android:label="Alisa Bridge"
+        android:supportsRtl="true">
+
+        <service
+            android:name="com.alisabridge.service.WakeWordService"
+            android:foregroundServiceType="microphone"
+            android:exported="false" />
+
+        <activity android:name="com.alisabridge.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
